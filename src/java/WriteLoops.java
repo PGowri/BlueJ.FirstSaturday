@@ -37,7 +37,7 @@ public class WriteLoops {
 
     public int startAtTwentyOne() {
         int w = 0;
-        for(int i=21; i<31; i++)
+        for(int i=21; i<=31; i++)
         // Write a FOR loop that makes 10 iterations, start at 21.
         // calling
         w = w + 1;
@@ -95,19 +95,18 @@ public class WriteLoops {
 
     public int helloZipCode() {
         int w = 0;
-        for (int i=5; i<=105;i++) {
-            if (i > 51) {
-                System.out.println("Hello Zipcode");
-            }
-
             // Write a FOR loop that counts from 5 to 105. Put an IF
             // statement inside the loop that checks the
             // loop index counter and if it’s greater than 51,
             // prints “Hello Zipcode” instead of the statement w = w + 1;
-
-            // calling
-            w = w + 1;
-            // each time through the inner loop
+        for (int i=5; i<=105;i++) {
+            if (i > 51) {
+                System.out.println("Hello Zipcode");
+            } else {
+                // calling
+                w = w + 1;
+                // each time through the inner loop
+            }
         }
         return w;
     }
@@ -155,22 +154,22 @@ public class WriteLoops {
     // is less than “highestScore” and if it is, adds “currentScore” to
     // "runningScore"
     // and then sets “currentScore” to “gameNextScore()”
-    public int checkGameScore() {
+    public boolean checkGameScore() {
         int w = 0;
         int highestScore = 236;
         int currentScore = gameNextScore();
         int runningScore = 0;
 
         // do your while loop here
-        while(runningScore < highestScore){
-            currentScore = currentScore+runningScore;
-             gameNextScore();
-        }
+        while(runningScore < highestScore) {
+            runningScore = currentScore + runningScore;
+            currentScore= currentScore+ gameNextScore();
             // calling
             w = w + 1;
+        }
             // each time through the inner loop
         
-        return w; // >= 3;
+        return w>=2; // >= 3;
     }
 
     // Rewrite the previous WHILE loop as a DO..WHILE loop.
@@ -184,14 +183,15 @@ public class WriteLoops {
 
         // do your while loop here
         do {
-            currentScore =runningScore + currentScore;
-            gameNextScore();
-        } while(highestScore>runningScore);
-            // calling
+            runningScore = currentScore + runningScore;
+            currentScore= currentScore+ gameNextScore();
             w = w + 1;
-            // each time through the inner loop
+        } while(highestScore > runningScore);
+        // calling
 
-            return w<=3; //>=3;
+        // each time through the inner loop
+
+            return w>=4; //>=3;
 
     }
 
@@ -284,15 +284,12 @@ public class WriteLoops {
             sumOfThrees = sumOfThrees +threes_array[i];
             i++;
         }
-
-
             // calling
             w = w + 1;
             // each time through the inner loop
         
         System.out.print("The Sum is ");
         System.out.println(sumOfThrees);
-
         return w;
     }
 
@@ -414,6 +411,7 @@ public class WriteLoops {
         if (!timeForSchool.equalsIgnoreCase("First Day of School")) {
             throw new IllegalArgumentException();
         }
+
         /* dammit, mow the yard */}
 
     // private Supplier<Boolean> isSummer = () -> {
